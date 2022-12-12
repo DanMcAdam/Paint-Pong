@@ -31,11 +31,18 @@ public class GoalTriggerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GoalScored(collision.gameObject.GetComponentInParent<BallController>());
+        try
+        {
+            GoalScored(collision.gameObject.GetComponentInParent<BallController>());
+        }
+        catch (System.Exception)
+        {
+
+        }
     }
 }
 
-enum Player
+public enum Player
 {
     Player1,
     Player2
